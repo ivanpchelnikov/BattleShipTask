@@ -18,6 +18,6 @@ The API should not support the entire game, just the state tracker. No graphical
     - location should be in line horisontaly or verticaly
     - if location intersect existing ship, no ship will be added
 3. To attack a ship: Put <b>llocalhost:{port}/game/{id}/{x}/{y}</b>
-    - missed - missing
-    - ship - attack succesfull
-    - sinked  - no ship left game over.
+    - missed for missing
+    - ship for attack succesfull
+    - sinked  for no ship left game over.
