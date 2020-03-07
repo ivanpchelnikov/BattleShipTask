@@ -7,10 +7,8 @@ The Task
 The task is to implement a Battleship state tracking API for a single player that must support the following logic:
 
 • Create a board<br/>
-• Add a battleship to the board 
-
-• Take an “attack” at a given position, and report back whether the attack
-resulted in a hit or a miss. 
+• Add a battleship to the board<br/>
+• Take an “attack” at a given position, and report back whether the attack resulted in a hit or a miss. 
 
 The API should not support the entire game, just the state tracker. No graphical interface or persistence layer is required.
 
