@@ -1,3 +1,4 @@
+<pre>
 Battle ship task.
 
 Please clone: https://github.com/ivanpchelnikov/BattleShipTask.git.
@@ -26,19 +27,20 @@ The API should not support the entire game, just the state tracker. No graphical
 	
 	Run a server:
 	1. Create a game: 
-			Post <b>localhost:{port}/game </b>
-				response: 1
+			Post localhost:{port}/game 
+				 - response: 1
 	2. Add a ship: 
-			Put <b>localhost:{port}/game/1/0/0/0/3 </b>
-				response: Ship was added succesfully to the game Id 1.
+			Put localhost:{port}/game/1/0/0/0/3
+				 - response: Ship was added succesfully to the game Id 1
 	3. Attack ship: 
-			Put <b>localhost:{port}/game/attack/1/0/0</b>
-				response: Ship.
-			Put <b>localhost:{port}/game/attack/1/1/0</b>
-				response: Missed.
-			Put <b>localhost:{port}/game/attack/1/0/1</b>
-				response: Ship.
-			Put <b>localhost:{port}/game/attack/1/0/2</b>
-				response: Ship.
-			Put <b>localhost:{port}/game/attack/1/0/3</b>
-				response: Congratulation all ships are sinked. Game Over!
+			Put localhost: {port}/game/attack/1/0/0
+				- response: Ship 
+			Put localhost: {port}/game/attack/1/1/0 
+				- response: Missed 
+			Put localhost: {port}/game/attack/1/0/1 
+				- response: Ship 
+			Put localhost:{port}/game/attack/1/0/2 
+				- response: Ship 
+			Put localhost:{port}/game/attack/1/0/3 
+				- response: Congratulation all ships are sinked. Game Over!
+</pre>
