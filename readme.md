@@ -27,20 +27,20 @@ The API should not support the entire game, just the state tracker. No graphical
 	
 	Run a server:
 	1. Create a game: 
-			Post localhost:{port}/game </br>
-				 - response: 1 </br>
+			Post localhost:{port}/game 
+				 - response: 1
 	2. Add a ship: 
-			Put localhost:{port}/game/1/0/0/0/3 </br>
-				 - response: Ship was added succesfully to the game Id 1</br>
+			Put localhost:{port}/game/1/0/0/0/3
+				 - response: Ship was added succesfully to the game Id 1
 	3. Attack ship: 
-			Put localhost: {port}/game/attack/1/0/0 </br>
+			Put localhost: {port}/game/attack/1/0/0
 				- response: Ship </br>
-			Put localhost: {port}/game/attack/1/1/0 </br>
+			Put localhost: {port}/game/attack/1/1/0 
 				response: Missed </br>
-			Put localhost: {port}/game/attack/1/0/1 </br>
+			Put localhost: {port}/game/attack/1/0/1 
 				response: Ship </br>
-			Put localhost:{port}/game/attack/1/0/2 </br>
+			Put localhost:{port}/game/attack/1/0/2 
 				response: Ship </br>
-			Put localhost:{port}/game/attack/1/0/3 </br>
+			Put localhost:{port}/game/attack/1/0/3 
 				response: Congratulation all ships are sinked. Game Over!
 </pre>
