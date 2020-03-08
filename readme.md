@@ -33,7 +33,7 @@ The API should not support the entire game, just the state tracker. No graphical
 				response: Ship was added succesfully to the game Id 1</br>
 	3. Attack ship: 
 			Put <b>localhost:{port}/game/attack/1/0/0 </br>
-				response: Ship </br>
+				- response: Ship </br>
 			Put <b>localhost:{port}/game/attack/1/1/0 </br>
 				response: Missed </br>
 			Put <b>localhost:{port}/game/attack/1/0/1 </br>
