@@ -17,7 +17,28 @@ The API should not support the entire game, just the state tracker. No graphical
     - start of location X,Y should be less end of location X,Y  (0,0) - (4,0) and within boards size 10*10 in range (0-9,0-9)
     - location should be in line horisontaly or verticaly
     - if location intersect existing ship, no ship will be added
-3. To attack a ship: Put <b>llocalhost:{port}/game/{id}/{x}/{y}</b>
+3. To attack a ship: Put <b>localhost:{port}/game/attack/{id}/{x}/{y}</b>
     - missed for missing
     - ship for attack succesfull
-    - sinked  for no ship left game over.
+    - game over. if no ship left.
+	
+	Sample:
+	
+	Run a server:
+	1. Create a game: 
+			Post <b>localhost:{port}/game </b>
+				response: 1
+	2. Add a ship: 
+			Put <b>localhost:{port}/game/1/0/0/0/3 </b>
+				response: Ship was added succesfully to the game Id 1.
+	3. Attack ship: 
+			Put <b>localhost:{port}/game/attack/1/0/0</b>
+				response: Ship.
+			Put <b>localhost:{port}/game/attack/1/1/0</b>
+				response: Missed.
+			Put <b>localhost:{port}/game/attack/1/0/1</b>
+				response: Ship.
+			Put <b>localhost:{port}/game/attack/1/0/2</b>
+				response: Ship.
+			Put <b>localhost:{port}/game/attack/1/0/3</b>
+				response: Congratulation all ships are sinked. Game Over!

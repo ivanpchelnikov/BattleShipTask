@@ -16,7 +16,7 @@ namespace BattleShip
         public bool AddShip(int gameId, int startX, int endX, int startY, int endY)
         {
             if (gameId < 0 ||
-                GamesBoardsList.Count > 0 && GamesBoardsList.Any(g => g.Id != gameId))
+                GamesBoardsList.Count > 0 && GamesBoardsList.Find(g => g.Id == gameId) == null)
                 throw new Exception("Game doesn't exist.");
 
             if (startX < 0 || startX > GameBoardsList.size - 1 ||
@@ -30,6 +30,17 @@ namespace BattleShip
             if (startX > endX && startY > endY) throw new Exception("Ship location start position must be less or equal then end postion.");
 
             var game = GamesBoardsList.Where(g => g.Id == gameId).First();
+
+            for (int x = 0; x < GameBoardsList.size; x++)
+            {
+                for (int y = 0; y < GameBoardsList.size; y++)
+                {
+                    if (game.BoardContent[x, y] == Cell.Missed)
+                    {
+                        throw new Exception($"The game id {gameId} was started.");
+                    }
+                }
+            }
 
             for (int x = startX; x <= endX; x++)
             {
@@ -47,7 +58,7 @@ namespace BattleShip
         public bool AttackShip(int gameId, int X, int Y)
         {
             if (gameId < 0 ||
-                GamesBoardsList.Count > 0 && GamesBoardsList.Any(g => g.Id != gameId))
+                GamesBoardsList.Count > 0 && GamesBoardsList.Find(g => g.Id == gameId) == null)
                 throw new Exception("Game doesn't exist.");
 
             if (X < 0 && X > GameBoardsList.size - 1 ||

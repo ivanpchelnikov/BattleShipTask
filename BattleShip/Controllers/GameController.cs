@@ -23,10 +23,10 @@ namespace BattleShip.Controllers
             return Ok($"Total number of games: {numOfGames}");
         }
         [HttpPost]
-        public ContentResult Create()
+        public ActionResult Create()
         {
             var game = _gameDataHandler.Create();
-            return Content($"New Game created. Game Id: {game.Id}");
+            return Ok(game.Id);
         }
         [HttpPut]
         [Route("{id}/{startX}/{endX}/{startY}/{endY}")]
@@ -36,7 +36,7 @@ namespace BattleShip.Controllers
             {
                 _gameValidateHandler.AddShip(id, startX, endX, startY, endY);
                 var resultId = _gameDataHandler.AddShip(id, startX, endX, startY, endY);
-                return Ok($"Ship was added succesfully to the game id {resultId}");
+                return Ok($"Ship was added succesfully to the game Id {resultId}");
             }
             catch (Exception ex)
             {
@@ -45,7 +45,7 @@ namespace BattleShip.Controllers
 
         }
         [HttpPut]
-        [Route("atack/{id}/{x}/{y}")]
+        [Route("attack/{id}/{x}/{y}")]
         public ActionResult Attack(int id, int x, int y)
         {
             try
@@ -54,11 +54,11 @@ namespace BattleShip.Controllers
                 var result = _gameDataHandler.AttackShip(id, x, y);
                 if (result == Cell.Missed)
                 {
-                    return Ok($"Attacked was missed.");
+                    return Ok($"Missed.");
                 }
                 else if (result == Cell.Ship)
                 {
-                    return Ok($"Attacked was succesfully.");
+                    return Ok($"Ship");
                 }
                 return Ok($"Congratulation all ships are sinked. Game Over! ");
             }
