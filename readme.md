@@ -1,3 +1,4 @@
+<pre>
 Battle ship task.
 
 Please clone: https://github.com/ivanpchelnikov/BattleShipTask.git.
@@ -42,3 +43,4 @@ The API should not support the entire game, just the state tracker. No graphical
 				response: Ship </br>
 			Put localhost:{port}/game/attack/1/0/3 </br>
 				response: Congratulation all ships are sinked. Game Over!
+</pre>
