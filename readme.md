@@ -28,7 +28,7 @@ The API should not support the entire game, just the state tracker. No graphical
 	Run a server localhost or use  https://battleship20200308120701.azurewebsites.net
 	1. Create a game: 
 			Post https://battleship20200308120701.azurewebsites.net/game 
-				 - response: 0
+				 - response: 1
 	2. Add a ship: 
 			Put https://battleship20200308120701.azurewebsites.net/game/1/0/0/0/3
 				 - response: Ship was added succesfully to the game Id 1
