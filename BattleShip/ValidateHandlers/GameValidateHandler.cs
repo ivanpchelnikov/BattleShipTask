@@ -35,7 +35,7 @@ namespace BattleShip
             {
                 for (int y = 0; y < GameBoardsList.size; y++)
                 {
-                    if (game.BoardContent[x, y] == Cell.Missed)
+                    if (game.BoardContent[x, y] == Cell.Missed || game.BoardContent[x, y] == Cell.Sinked)
                     {
                         throw new Exception($"The game id {gameId} was started.");
                     }
